@@ -28,6 +28,7 @@
 		ECBEB95F2449028A00812261 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB9362447708600812261 /* TranslatorViewController.swift */; };
 		ECBEB96124490D8D00812261 /* KanaTranslatorUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB96024490D8D00812261 /* KanaTranslatorUseCaseTest.swift */; };
 		ECBEB963244911E600812261 /* TranslatorPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB962244911E600812261 /* TranslatorPresenterTest.swift */; };
+		ECBEB96524491C1100812261 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB96424491C1100812261 /* ViewConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		ECBEB9562448FD0600812261 /* KanaTranslatorAPIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaTranslatorAPIClientTest.swift; sourceTree = "<group>"; };
 		ECBEB96024490D8D00812261 /* KanaTranslatorUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaTranslatorUseCaseTest.swift; sourceTree = "<group>"; };
 		ECBEB962244911E600812261 /* TranslatorPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorPresenterTest.swift; sourceTree = "<group>"; };
+		ECBEB96424491C1100812261 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				ECBEB9362447708600812261 /* TranslatorViewController.swift */,
+				ECBEB96424491C1100812261 /* ViewConstants.swift */,
 				ECBEB9432448430A00812261 /* Extentions.swift */,
 			);
 			path = Views;
@@ -296,6 +299,7 @@
 				ECBEB93F2447908B00812261 /* TranslatorPresenter.swift in Sources */,
 				ECBEB93B2447812E00812261 /* WebAPIDataModels.swift in Sources */,
 				ECBEB91124476E1800812261 /* AppDelegate.swift in Sources */,
+				ECBEB96524491C1100812261 /* ViewConstants.swift in Sources */,
 				ECBEB942244794D100812261 /* KanaTranslatorUseCase.swift in Sources */,
 				ECBEB9442448430A00812261 /* Extentions.swift in Sources */,
 				ECBEB93924477A2400812261 /* KanaTranslatorAPIClient.swift in Sources */,

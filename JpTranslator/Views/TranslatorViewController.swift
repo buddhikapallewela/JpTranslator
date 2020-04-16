@@ -14,7 +14,6 @@ protocol TranslatorUserInterface: class {
     func displayOutput(output: String)
     func showAlert(title: String, message: String)
     func inputTextViewResignFirstResponder()
-//    func inputTextViewFocusFirstResponder()
 }
 
 /// Translator home view controller
@@ -28,7 +27,6 @@ class TranslatorViewController: UIViewController {
     @IBOutlet weak var outputTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var inputTextViewHeightConstraint: NSLayoutConstraint!
-    
     
     // variables
     private var presenter: TranslatorPresenterProtocol?
@@ -56,12 +54,9 @@ extension TranslatorViewController {
     }
 }
 
-// MARK: UIViewController protocol conformance
-extension TranslatorViewController: UITextViewDelegate {}
-
 // MARK: TranslatorUserInterface protocol conformance
 extension TranslatorViewController: TranslatorUserInterface {
-    
+    /// 画面表示設定
     func setupView(viewModel: TranslatorViewController.ViewModel) {
         // UIコントロール設定
         setupUIControls()
@@ -74,7 +69,7 @@ extension TranslatorViewController: TranslatorUserInterface {
         outputTypeSegmentedControl.setTitle(TranslationOutputType.hiragana.rawValue, forSegmentAt: 0)
         outputTypeSegmentedControl.setTitle(TranslationOutputType.katakana.rawValue, forSegmentAt: 1)
     }
-
+    
     /// 変換結果を表示
     func displayOutput(output: String) {
         self.outputTextView.text = output
@@ -88,41 +83,47 @@ extension TranslatorViewController: TranslatorUserInterface {
         present(alert, animated: true, completion: nil)
     }
     
+    /// キーボードを閉じる
     func inputTextViewResignFirstResponder() {
         self.inputTextView.resignFirstResponder()
     }
     
+    /// 画面のUIコントロール設定
     private func setupUIControls() {
+        // set Input text views height to 1/3 of the screen height(to make equal propostion for every size class)
         inputTextViewHeightConstraint.constant = UIScreen.main.bounds.height / 3
         
-        inputLabel.textColor = UIColor.purple
-        outputLabel.textColor = UIColor.purple
+        inputLabel.textColor = ViewColor.basicText
+        outputLabel.textColor = ViewColor.basicText
         
-        outputTextView.tintColor = UIColor.purple
-        inputTextView.layer.cornerRadius = 5.0
-        inputTextView.layer.borderWidth = 1
-        inputTextView.layer.borderColor = UIColor.purple.cgColor
+        outputTextView.tintColor = ViewColor.basicText
+        inputTextView.layer.cornerRadius = ViewProperties.cornerRadius
+        inputTextView.layer.borderWidth = ViewProperties.borderWidth
+        inputTextView.layer.borderColor = ViewColor.basicBorder.cgColor
         
         if #available(iOS 13.0, *) {
-            outputTypeSegmentedControl.backgroundColor = UIColor.lightGray
-            outputTypeSegmentedControl.tintColor = UIColor.yellow
-            outputTypeSegmentedControl.selectedSegmentTintColor = UIColor.purple
-        } 
+            outputTypeSegmentedControl.selectedSegmentTintColor = ViewColor.basicText
+            outputTypeSegmentedControl.backgroundColor = ViewColor.defaultBackground
+            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: ViewColor.basicButtonText]
+            outputTypeSegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        }
         
-        //let titleTextAttributes2 = []
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.yellow, NSAttributedString.Key.backgroundColor: UIColor.purple]
-        outputTypeSegmentedControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
-        outputTypeSegmentedControl.layer.backgroundColor = UIColor.lightGray.cgColor
+        outputTypeSegmentedControl.layer.borderWidth = ViewProperties.borderWidth
+        outputTypeSegmentedControl.layer.cornerRadius = ViewProperties.cornerRadius
+        outputTypeSegmentedControl.layer.borderColor = ViewColor.basicBorder.cgColor
         
-        translateButton.layer.cornerRadius = 5.0
-        translateButton.backgroundColor = UIColor.purple
-        translateButton.tintColor = UIColor.yellow
+        translateButton.layer.cornerRadius = ViewProperties.cornerRadius
+        translateButton.backgroundColor = ViewColor.basicButtonBackground
+        translateButton.tintColor = ViewColor.basicButtonText
         
-        outputTextView.layer.cornerRadius = 5.0
-        outputTextView.layer.borderWidth = 1
-        outputTextView.layer.borderColor = UIColor.purple.cgColor
+        outputTextView.layer.cornerRadius = ViewProperties.cornerRadius
+        outputTextView.layer.borderWidth = ViewProperties.borderWidth
+        outputTextView.layer.borderColor = ViewColor.basicBorder.cgColor
         
         inputTextView.delegate = self
         inputTextView.addAccessoryButtons()
     }
 }
+
+// MARK: UIViewController protocol conformance
+extension TranslatorViewController: UITextViewDelegate {}
