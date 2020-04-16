@@ -16,9 +16,9 @@ protocol KanaTranslatorUseCaseProtocol {
 /// Usecase for Kana Translator
 final class KanaTranslatorUseCase {
     
-    private let apiClient: TranslatorAPIClientProtocol
+    private let apiClient: KanaTranslatorAPIClientProtocol
     
-    init(apiClient: TranslatorAPIClientProtocol = TranslatorAPIClient()) {
+    init(apiClient: KanaTranslatorAPIClientProtocol = KanaTranslatorAPIClient()) {
         self.apiClient = apiClient
     }
 }

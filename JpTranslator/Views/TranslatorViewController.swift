@@ -51,7 +51,7 @@ class TranslatorViewController: UIViewController {
 extension TranslatorViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = TranslatorPresenter(self, usecase: KanaTranslatorUseCase(apiClient: TranslatorAPIClient()))
+        presenter = TranslatorPresenter(self, usecase: KanaTranslatorUseCase(apiClient: KanaTranslatorAPIClient()))
         presenter?.viewDidLoad()
     }
 }
