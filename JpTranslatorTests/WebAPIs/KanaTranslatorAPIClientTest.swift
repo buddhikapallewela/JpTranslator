@@ -2,32 +2,82 @@
 //  KanaTranslatorAPIClientTest.swift
 //  JpTranslatorTests
 //
-//  Created by Buddhika Pallewela on 2020/04/17.
+//  Created by Buddhika Pallewela on 2020/04/16.
 //  Copyright © 2020 Buddhika Pallewela. All rights reserved.
 //
 
 import XCTest
 
 class KanaTranslatorAPIClientTest: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testTranslateTextSuccess() {
+        let stub = HttpClientStub()
+        stub.setResponseData(responseData: createTranslataionSuccessData())
+        let client = KanaTranslatorAPIClient(client: stub)
+        client.translateText(originalText: "今日はいい天気です", outputMethod: "hiragana") { result in
+            switch result {
+            case .success:
+                XCTAssert(true)
+            case.failure:
+                XCTAssert(false)
+            }
         }
     }
+    
+    func testTranslateTextFailure() {
+        let stub = HttpClientStub()
+        stub.setResponseData(responseData: createTranslataionErrorData())
+        let client = KanaTranslatorAPIClient(client: stub)
+        client.translateText(originalText: "....", outputMethod: "hiragana") { result in
+            switch result {
+            case .success:
+                XCTAssert(false)
+            case.failure:
+                XCTAssert(true)
+            }
+        }
+    }
+}
 
+extension KanaTranslatorAPIClientTest {
+    
+    private class HttpClientStub: HttpClientProtocol {
+        var responseData: [String: Any] = [String: Any]()
+        
+        func setResponseData(responseData: [String: Any]) {
+            self.responseData = responseData
+        }
+        
+        func post(url: URL, parameters: [String : String], completionHandler: @escaping (Data?, Error?) -> Void) {
+            do {
+                //Convert to Data
+                let jsonData = try JSONSerialization.data(withJSONObject: self.responseData, options: .prettyPrinted)
+                completionHandler(jsonData, nil)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func createTranslataionSuccessData() -> [String: Any]  {
+        
+        let jsonObject: [String: String] = [
+            "converted": "キョウハ イイ テンキデス",
+            "output_type": "str",
+            "request_id": "1111"
+        ]
+        
+        return jsonObject
+    }
+    
+    func createTranslataionErrorData() -> [String: Any]  {
+        
+        let jsonObject: [String: Any] = [
+            "error": [
+                "code": 400,
+                "message": "Invalid app_id"
+            ]
+        ]
+        
+        return jsonObject
+    }
 }

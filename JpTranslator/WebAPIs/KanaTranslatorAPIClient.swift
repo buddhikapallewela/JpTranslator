@@ -14,6 +14,7 @@ private struct Constants {
     static let baseUrl = "https://labs.goo.ne.jp/api/hiragana"
     static let unknownErrorCode = 400
     static let unknownServerErrorMessage = "Translation data retrieve Error, Please try again later..."
+    static let defaultRequestId = "Request1"
 }
 
 enum TranslationOutputType: String{
@@ -38,7 +39,7 @@ final class KanaTranslatorAPIClient: KanaTranslatorAPIClientProtocol {
     func translateText(originalText: String, outputMethod: String, completion: @escaping (Result<TranslationSuccessResponse, TranslationErrorResponse>) -> Void) {
         let params = [
             "app_id": Constants.applicationId,
-            "request_id":"record003",
+            "request_id": Constants.defaultRequestId,
             "sentence": originalText,
             "output_type": outputMethod
         ]

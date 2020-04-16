@@ -14,7 +14,7 @@ protocol TranslatorUserInterface: class {
     func displayOutput(output: String)
     func showAlert(title: String, message: String)
     func inputTextViewResignFirstResponder()
-    func inputTextViewFocusFirstResponder()
+//    func inputTextViewFocusFirstResponder()
 }
 
 /// Translator home view controller
@@ -57,11 +57,7 @@ extension TranslatorViewController {
 }
 
 // MARK: UIViewController protocol conformance
-extension TranslatorViewController: UITextViewDelegate {
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        textView.resignFirstResponder()
-//    }
-}
+extension TranslatorViewController: UITextViewDelegate {}
 
 // MARK: TranslatorUserInterface protocol conformance
 extension TranslatorViewController: TranslatorUserInterface {
@@ -96,10 +92,6 @@ extension TranslatorViewController: TranslatorUserInterface {
         self.inputTextView.resignFirstResponder()
     }
     
-    func inputTextViewFocusFirstResponder() {
-        self.inputTextView.becomeFirstResponder()
-    }
-    
     private func setupUIControls() {
         inputTextViewHeightConstraint.constant = UIScreen.main.bounds.height / 3
         
@@ -115,9 +107,7 @@ extension TranslatorViewController: TranslatorUserInterface {
             outputTypeSegmentedControl.backgroundColor = UIColor.lightGray
             outputTypeSegmentedControl.tintColor = UIColor.yellow
             outputTypeSegmentedControl.selectedSegmentTintColor = UIColor.purple
-            
-
-        }
+        } 
         
         //let titleTextAttributes2 = []
         let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.yellow, NSAttributedString.Key.backgroundColor: UIColor.purple]

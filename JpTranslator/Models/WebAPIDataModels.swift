@@ -48,18 +48,3 @@ enum TranslationResponse<T: Decodable>: Decodable {
         }
     }
 }
-
-// success response
-//    {
-//    "converted": "キョウハ イイ テンキデス",
-//    "output_type": "katakana",
-//    "request_id": "labs.goo.ne.jp\t1586969137\t0"
-//    }
-
-//error response
-//{
-//    "error": {
-//        "code": 400,
-//        "message": "Invalid app_id"
-//    }
-//}

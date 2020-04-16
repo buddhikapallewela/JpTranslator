@@ -45,20 +45,16 @@ extension TranslatorPresenter: TranslatorPresenterProtocol {
         self.userInterface?.inputTextViewResignFirstResponder()
         guard let inputText = inputText, !inputText.isEmpty else {
             self.userInterface?.showAlert(title: Constants.inputTextErrorTitle, message: Constants.inputTextEmptyErrorMessage)
-            self.userInterface?.inputTextViewFocusFirstResponder()
             return
         }
         
-        //userInterface?.showHUD()
         self.usecase.translateText(originalText: inputText, outputMethod: outputMethod.rawValue) { [weak self] result in
             guard let self = self else { return }
-            //self.userInterface?.hideHUD()
             switch result {
             case .success(let response):
                 self.userInterface?.displayOutput(output: response.output)
             case .failure(let error):
                 self.userInterface?.showAlert(title: error.errorTitle, message: error.errorMessage)
-                //self.userInterface?.focusFirstResponder()
                 return
             }
         }

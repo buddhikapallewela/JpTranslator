@@ -11,7 +11,6 @@
 		ECBEB91824476E1800812261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBEB91624476E1800812261 /* Main.storyboard */; };
 		ECBEB91A24476E1C00812261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBEB91924476E1C00812261 /* Assets.xcassets */; };
 		ECBEB91D24476E1C00812261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBEB91B24476E1C00812261 /* LaunchScreen.storyboard */; };
-		ECBEB92824476E1C00812261 /* JpTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB92724476E1C00812261 /* JpTranslatorTests.swift */; };
 		ECBEB9372447708600812261 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB9362447708600812261 /* TranslatorViewController.swift */; };
 		ECBEB93924477A2400812261 /* KanaTranslatorAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93824477A2400812261 /* KanaTranslatorAPIClient.swift */; };
 		ECBEB93B2447812E00812261 /* WebAPIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93A2447812E00812261 /* WebAPIDataModels.swift */; };
@@ -19,6 +18,16 @@
 		ECBEB93F2447908B00812261 /* TranslatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93E2447908B00812261 /* TranslatorPresenter.swift */; };
 		ECBEB942244794D100812261 /* KanaTranslatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB941244794D100812261 /* KanaTranslatorUseCase.swift */; };
 		ECBEB9442448430A00812261 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB9432448430A00812261 /* Extentions.swift */; };
+		ECBEB9572448FD0600812261 /* KanaTranslatorAPIClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB9562448FD0600812261 /* KanaTranslatorAPIClientTest.swift */; };
+		ECBEB9582448FD3400812261 /* KanaTranslatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB941244794D100812261 /* KanaTranslatorUseCase.swift */; };
+		ECBEB9592448FD3700812261 /* KanaTranslatorAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93824477A2400812261 /* KanaTranslatorAPIClient.swift */; };
+		ECBEB95A2448FD3A00812261 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93C2447832C00812261 /* HttpClient.swift */; };
+		ECBEB95B2448FD3E00812261 /* TranslatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93E2447908B00812261 /* TranslatorPresenter.swift */; };
+		ECBEB95C2448FD4100812261 /* WebAPIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB93A2447812E00812261 /* WebAPIDataModels.swift */; };
+		ECBEB95E2449028800812261 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB9432448430A00812261 /* Extentions.swift */; };
+		ECBEB95F2449028A00812261 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB9362447708600812261 /* TranslatorViewController.swift */; };
+		ECBEB96124490D8D00812261 /* KanaTranslatorUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB96024490D8D00812261 /* KanaTranslatorUseCaseTest.swift */; };
+		ECBEB963244911E600812261 /* TranslatorPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB962244911E600812261 /* TranslatorPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +48,6 @@
 		ECBEB91C24476E1C00812261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECBEB91E24476E1C00812261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBEB92324476E1C00812261 /* JpTranslatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JpTranslatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECBEB92724476E1C00812261 /* JpTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JpTranslatorTests.swift; sourceTree = "<group>"; };
 		ECBEB92924476E1C00812261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBEB9362447708600812261 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
 		ECBEB93824477A2400812261 /* KanaTranslatorAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaTranslatorAPIClient.swift; sourceTree = "<group>"; };
@@ -48,6 +56,9 @@
 		ECBEB93E2447908B00812261 /* TranslatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorPresenter.swift; sourceTree = "<group>"; };
 		ECBEB941244794D100812261 /* KanaTranslatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaTranslatorUseCase.swift; sourceTree = "<group>"; };
 		ECBEB9432448430A00812261 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		ECBEB9562448FD0600812261 /* KanaTranslatorAPIClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaTranslatorAPIClientTest.swift; sourceTree = "<group>"; };
+		ECBEB96024490D8D00812261 /* KanaTranslatorUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaTranslatorUseCaseTest.swift; sourceTree = "<group>"; };
+		ECBEB962244911E600812261 /* TranslatorPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +117,9 @@
 		ECBEB92624476E1C00812261 /* JpTranslatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				ECBEB92724476E1C00812261 /* JpTranslatorTests.swift */,
+				ECBEB9552448FCE000812261 /* Usecases */,
+				ECBEB9532448FCCE00812261 /* Presenters */,
+				ECBEB9522448FCC600812261 /* WebAPIs */,
 				ECBEB92924476E1C00812261 /* Info.plist */,
 			);
 			path = JpTranslatorTests;
@@ -150,6 +163,30 @@
 			isa = PBXGroup;
 			children = (
 				ECBEB941244794D100812261 /* KanaTranslatorUseCase.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		ECBEB9522448FCC600812261 /* WebAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				ECBEB9562448FD0600812261 /* KanaTranslatorAPIClientTest.swift */,
+			);
+			path = WebAPIs;
+			sourceTree = "<group>";
+		};
+		ECBEB9532448FCCE00812261 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				ECBEB962244911E600812261 /* TranslatorPresenterTest.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		ECBEB9552448FCE000812261 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				ECBEB96024490D8D00812261 /* KanaTranslatorUseCaseTest.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -207,6 +244,7 @@
 					};
 					ECBEB92224476E1C00812261 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = ECBEB90C24476E1800812261;
 					};
 				};
@@ -270,7 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBEB92824476E1C00812261 /* JpTranslatorTests.swift in Sources */,
+				ECBEB9582448FD3400812261 /* KanaTranslatorUseCase.swift in Sources */,
+				ECBEB96124490D8D00812261 /* KanaTranslatorUseCaseTest.swift in Sources */,
+				ECBEB95C2448FD4100812261 /* WebAPIDataModels.swift in Sources */,
+				ECBEB95F2449028A00812261 /* TranslatorViewController.swift in Sources */,
+				ECBEB9592448FD3700812261 /* KanaTranslatorAPIClient.swift in Sources */,
+				ECBEB95B2448FD3E00812261 /* TranslatorPresenter.swift in Sources */,
+				ECBEB963244911E600812261 /* TranslatorPresenterTest.swift in Sources */,
+				ECBEB95A2448FD3A00812261 /* HttpClient.swift in Sources */,
+				ECBEB9572448FD0600812261 /* KanaTranslatorAPIClientTest.swift in Sources */,
+				ECBEB95E2449028800812261 /* Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +508,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6V2NNGHW3;
 				INFOPLIST_FILE = JpTranslatorTests/Info.plist;
@@ -472,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.buddhika.JpTranslatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JpTranslator.app/JpTranslator";
@@ -483,6 +532,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6V2NNGHW3;
 				INFOPLIST_FILE = JpTranslatorTests/Info.plist;
