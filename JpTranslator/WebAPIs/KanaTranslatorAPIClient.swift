@@ -1,5 +1,5 @@
 //
-//  KanaTranslatorAPIClient.swift
+//  KanaKanaTranslatorAPIClient.swift
 //  JpTranslator
 //
 //  Created by Buddhika Pallewela on 2020/04/16.
@@ -21,12 +21,12 @@ enum TranslationOutputType: String{
 }
 
 /// Translator API Client Protocol
-protocol TranslatorAPIClientProtocol {
+protocol KanaTranslatorAPIClientProtocol {
     func translateText(originalText: String, outputMethod: String, completion: @escaping(Result<TranslationSuccessResponse, TranslationErrorResponse>) -> Void)
 }
 
 /// Translator API Client
-final class TranslatorAPIClient: TranslatorAPIClientProtocol {
+final class KanaTranslatorAPIClient: KanaTranslatorAPIClientProtocol {
     
     /// Web API client
     private let client: HttpClientProtocol
