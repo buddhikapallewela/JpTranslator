@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DD7C234248CE82700509148 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB96424491C1100812261 /* ViewConstants.swift */; };
 		ECBEB91124476E1800812261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEB91024476E1800812261 /* AppDelegate.swift */; };
 		ECBEB91824476E1800812261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBEB91624476E1800812261 /* Main.storyboard */; };
 		ECBEB91A24476E1C00812261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBEB91924476E1C00812261 /* Assets.xcassets */; };
@@ -317,6 +318,7 @@
 				ECBEB95C2448FD4100812261 /* WebAPIDataModels.swift in Sources */,
 				ECBEB95F2449028A00812261 /* TranslatorViewController.swift in Sources */,
 				ECBEB9592448FD3700812261 /* KanaTranslatorAPIClient.swift in Sources */,
+				2DD7C234248CE82700509148 /* ViewConstants.swift in Sources */,
 				ECBEB95B2448FD3E00812261 /* TranslatorPresenter.swift in Sources */,
 				ECBEB963244911E600812261 /* TranslatorPresenterTest.swift in Sources */,
 				ECBEB95A2448FD3A00812261 /* HttpClient.swift in Sources */,
