@@ -18,7 +18,7 @@ class TranslatorPresenterTest: XCTestCase {
         XCTAssertEqual(userInterfaceMock.pageTitleText, "Kana Translator")
         XCTAssertEqual(userInterfaceMock.inputLabelText, "Original Text")
         XCTAssertEqual(userInterfaceMock.outputLabelText, "Translation")
-        XCTAssertEqual(userInterfaceMock.translateButtonText, "Translate")
+        XCTAssertEqual(userInterfaceMock.translateButtonText, "Translate1")
     }
 
     func testHandleTranslateButtonTappedSuccess() {
